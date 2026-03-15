@@ -1,1 +1,2 @@
-console.log("JavaScript is connected!")
+let message="Hello JavaScript";
+console.log(message);
