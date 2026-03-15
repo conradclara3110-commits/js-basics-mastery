@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validator</title>
+</head>
+<body>
+
+<h2>Enter Your Name</h2>
+
+<input type="text" id="nameInput" placeholder="Enter your name">
+<p id="feedback" style="color: red;"></p>
+<button id="submitBtn">Submit</button>
+
+<script>
+
+const nameInput = document.getElementById("nameInput");
+const feedback = document.getElementById("feedback");
+const submitBtn = document.getElementById("submitBtn");
+
+function validateName() {
+
+    const name = nameInput.value;
+
+    if (name.length === 0) {
+        feedback.textContent = "Name is required!";
+        feedback.style.color = "red";
+    } 
+    else if (name.length < 3) {
+        feedback.textContent = "Name must be at least 3 characters long!";
+        feedback.style.color = "red";
+    } 
+    else {
+        feedback.textContent = "Welcome, " + name + "!";
+        feedback.style.color = "green";
+    }
+}
+
+submitBtn.addEventListener("click", validateName);
+
+nameInput.addEventListener("input", validateName);
+
+</script>
+
+</body>
+</html>
